@@ -16,8 +16,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
+        val employeeDao = (application as EmployeeApp).db.employeeDao()
+
         binding?.btnAddRecord?.setOnClickListener {
-            // TODO call addrecord with employeeDao
+            addRecord(employeeDao)
         }
     }
 
